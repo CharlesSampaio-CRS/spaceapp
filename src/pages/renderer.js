@@ -1,7 +1,33 @@
 const { ipcRenderer } = require('electron');
+const { io } = require("socket.io-client");
+const socket = io("http://localhost:3001"); 
+
+
 
 let webview = null;
 let currentSite = 'home';
+
+socket.on("connect", () => {
+    console.log("Conectado ao WebSocket:", socket.id);
+  });
+
+socket.on("notification", (data) => {
+    if (Notification.permission === "granted") {
+      new Notification(data.title, {
+        body: data.body,
+        icon: "../assets/icon.png", // opcional
+      });
+    } else {
+      Notification.requestPermission().then((permission) => {
+        if (permission === "granted") {
+          new Notification(data.title, {
+            body: data.body,
+          });
+        }
+      });
+    }
+  });
+  
 
 document.addEventListener('DOMContentLoaded', () => {
     webview = document.getElementById('webview');
@@ -182,6 +208,10 @@ ipcRenderer.on('load-error', (event, data) => {
     document.getElementById('error-message').textContent =
         `Erro ao carregar ${data.site}: ${data.error}`;
 });
+
+setTimeout(() => {
+    socket.emit("nova-mensagem", { texto: "Olá do cliente!" });
+  }, 1000);
 
 ipcRenderer.on('site-loading', (event, data) => {
     if (data.title && document.getElementById('page-title')) {

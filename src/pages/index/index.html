@@ -150,7 +150,9 @@
 
       <main class="flex-grow-1">
         <webview id="webview" webpreferences="contextIsolation=false, nodeIntegration=false"
-          partition="persist:mainSession" class="w-100 h-100"
+          partition="persist:mainSession" class="w-100 h-100" 
+          preload="../src/webview-handler.js"
+          data-name="Home"
           useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36">
         </webview>
         <webview id="preloader" style="display: none; width: 0; height: 0;" partition="persist:preloader"></webview>
@@ -200,6 +202,15 @@
 
   <!-- Script principal -->
   <script>
+
+ipcRenderer.on("websocket-notification", (event, data) => {
+  const webview = document.getElementById("webview");
+  if (webview) {
+    // Envia mensagem para o conteúdo carregado na webview
+    webview.send("notify-from-main", data);
+  }
+});
+
     document.addEventListener('DOMContentLoaded', async () => {
       const { ipcRenderer } = require('electron');
 

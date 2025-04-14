@@ -6,8 +6,13 @@ const qs = require('querystring');
 const { autoUpdater } = require('electron-updater');
 require('dotenv').config();
 const config = require(path.join(__dirname, '../config'));
+const { fork } = require("child_process");
 
 const store = new Store();
+
+const wsServerPath = path.join(__dirname, "server", "websocket-server.js");
+const wsServer = fork(wsServerPath);
+
 
 global.sharedObject = {
   env: {
