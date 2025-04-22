@@ -47,9 +47,30 @@
     z-index: 10;
     flex-shrink: 0;
     overflow-y: auto;
+    max-height: 100vh; /* Garante que o sidebar não ultrapasse a altura da tela */
     transition: var(--transition);
+    scrollbar-width: thin; /* Para Firefox */
+    scrollbar-color: #4a90e2 #f0f0f0; /* Cor do thumb e track */
   }
   
+  /* Para WebKit (Chrome, Safari, Edge) */
+  #sidebar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #sidebar::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+  }
+  
+  #sidebar::-webkit-scrollbar-thumb {
+    background-color: #4a90e2;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  
+  /* Estilizando a rolagem na área das seções de navegação */
   .nav-section {
     flex: 1;
     width: 100%;
@@ -58,7 +79,8 @@
     align-items: center;
     gap: 8px;
     padding: 0 10px;
-    overflow-y: auto;
+    overflow-y: auto; /* Certifique-se de que a rolagem esteja aqui também */
+    max-height: calc(90vh - 45px); /* Ajusta a altura da seção, subtraindo a área de padding do sidebar */
   }
   
   .nav-button {
@@ -133,7 +155,7 @@
   
   #header {
     position: relative;
-    height: 60px;
+    height: 50px;
     background-color: var(--card-bg);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
@@ -142,6 +164,24 @@
     flex-shrink: 0;
   }
 
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .home-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 24px;
+  }
+  
+  .home-button img {
+    width: 32px;
+    height: 32px;
+  }
+  
   .header-title {
     font-weight: 600;
     color: var(--text-primary);
@@ -207,9 +247,18 @@
     max-height: 400px;
     overflow-y: auto;
   }
+
+  
+  
+  .notification-menu {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
   
   .notification-menu.show {
-    display: block;
+    opacity: 1;
+    transform: translateY(0);
   }
   
   .notification-header {
@@ -353,6 +402,32 @@
     overflow: hidden;
     border: none;
   }
+
+  .footer-tabs {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ddd;
+    z-index: 999;
+  }
+  
+  .footer-tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+  }
+  
+  .footer-tab.active {
+    background: #e2e6ea;
+    font-weight: bold;
+  } 
   
   webview {
     flex: 1;
@@ -362,7 +437,7 @@
     border: none;
   }
   
-  webview.active {
+   webview.active {
     display: flex;
   }
   

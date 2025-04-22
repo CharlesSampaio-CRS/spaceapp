@@ -19,13 +19,82 @@
 </head>
 
 <body>
+  <div id="header">
+    <div class="header-left">
+      <button id="home-button" class="home-button" title="Página Inicial">
+        <img width="32" height="32" src="https://img.icons8.com/color/48/planet.png" alt="Página Inicial" />
+      </button>
+    </div>
+    <div class="header-title" id="active-view-name">Página Inicial</div>
+    <div class="header-actions">
+      <button class="notification-bell" id="notification-bell">
+        <img width="24" height="24" src="https://img.icons8.com/emoji/48/bell-emoji.png" alt="bell-emoji" />
+        <span class="notification-badge">3</span>
+      </button>
+      <!-- Menu de Notificações -->
+      <div class="notification-container">
+        <div class="notification-menu" id="notification-menu">
+          <div class="notification-header">
+            <div class="notification-title">Notificações</div>
+            <button class="notification-clear" id="clear-notifications">Limpar tudo</button>
+          </div>
+          <div class="notification-list" id="notification-list">
+            <div class="notification-item" data-service="whatsapp">
+              <div class="notification-icon">
+                <img width="24" height="24" src="https://img.icons8.com/fluency/24/whatsapp.png" alt="WhatsApp" />
+              </div>
+              <div class="notification-content">
+                <div class="notification-message">Nova mensagem de João no WhatsApp</div>
+                <div class="notification-time">5 minutos atrás</div>
+              </div>
+            </div>
+
+            <div class="notification-item" data-service="instagram">
+              <div class="notification-icon">
+                <img width="24" height="24" src="https://img.icons8.com/fluency/24/instagram-new.png" />
+              </div>
+              <div class="notification-content">
+                <div class="notification-message">Maria comentou em sua foto no Instagram</div>
+                <div class="notification-time">20 minutos atrás</div>
+              </div>
+            </div>
+
+            <div class="notification-item" data-service="slack">
+              <div class="notification-icon">
+                <img width="24" height="24" src="https://img.icons8.com/color/24/slack.png" />
+              </div>
+              <div class="notification-content">
+                <div class="notification-message">Reunião em 15 minutos no canal #geral</div>
+                <div class="notification-time">30 minutos atrás</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-container">
+        <button class="menu-button" id="menu-button">
+          <img width="24" height="24" src="https://img.icons8.com/fluency/48/menu--v1.png" alt="Menu" />
+        </button>
+        <div class="dropdown-menu" id="dropdown-menu">
+          <button id="todoist-button" class="dropdown-item" type="button">
+            <img width="24" height="24" src="https://img.icons8.com/color/48/todoist.png" alt="Todoist" />
+            <span>Todoist</span>
+          </button>
+
+          <button id="configuration-button" class="dropdown-item" type="button">
+            <img width="24" height="24" src="https://img.icons8.com/color/48/settings--v1.png"
+              alt="Configuração" /><span>Configuração</span>
+          </button>
+          <button id="logout-button" class="dropdown-item" type="button">
+            <img width="24" height="24" src="https://img.icons8.com/color/24/exit.png" alt="Sair" /><span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="app">
     <div id="sidebar">
-      <div class="nav-section">
-        <!-- Botões de redes sociais e aplicativos com ícones via imagem -->
-        <button id="home-button" class="nav-button" title="Página Inicial">
-          <img width="48" height="48" src="https://img.icons8.com/color/48/planet.png" alt="Página Inicial" />
-        </button>
+      <div class="nav-section tab-content" id="tab-chats">
         <button id="whatsapp-button" class="nav-button" title="WhatsApp">
           <img width="48" height="48" src="https://img.icons8.com/fluency/48/whatsapp.png" alt="WhatsApp" />
         </button>
@@ -73,89 +142,76 @@
           <img width="48" height="48" src="https://img.icons8.com/fluency/48/snapchat.png" alt="Snapchat" />
         </button>
       </div>
+      <div class="nav-section tab-content d-none" id="tab-emails">
+        <!-- Exemplo: -->
+        <button id="gmail-button" class="nav-button" title="Gmail">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/gmail-new.png" alt="Gmail" />
+        </button>
+        <button id="outlook-button" class="nav-button" title="Outlook">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/ms-outlook.png" alt="Outlook" />
+        </button>
+      </div>
+
+      <div class="nav-section tab-content d-none" id="tab-news">
+        <button id="gnews-button" class="nav-button" title="Google News">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/google-news.png" alt="Google News" />
+        </button>
+        <button id="uol-button" class="nav-button" title="UOL">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/uol.png" alt="UOL" />
+        </button>
+        <button id="g1-button" class="nav-button" title="G1">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/g1.png" alt="G1" />
+        </button>
+        <button id="bandnews-button" class="nav-button" title="BandNews">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/band-news.png" alt="BandNews" />
+        </button>
+        <button id="cnnbrasil-button" class="nav-button" title="CNN Brasil">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/cnn.png" alt="CNN Brasil" />
+        </button>
+        <button id="bbcbrasil-button" class="nav-button" title="BBC Brasil">
+          <img width="48" height="48" src="https://img.icons8.com/ios-filled/50/bbc-logo.png" alt="BBC Brasil" />
+        </button>
+      </div>
+
+      <div class="nav-section tab-content d-none" id="tab-finance">
+
+        <button id="infomoney-button" class="nav-button" title="Infomoney">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/infomoney.png" alt="Infomoney" />
+        </button>
+        <button id="exame-button" class="nav-button" title="Exame">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/exame.png" alt="Exame" />
+        </button>
+        <button id="moneytimes-button" class="nav-button" title="Money Times">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/money-times.png" alt="Money Times" />
+        </button>
+        <button id="bloomberg-button" class="nav-button" title="Bloomberg Brasil">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/bloomberg.png" alt="Bloomberg Brasil" />
+        </button>
+        <button id="investing-button" class="nav-button" title="Investing.com Brasil">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/investing.png" alt="Investing.com Brasil" />
+        </button>
+      </div>
+
     </div>
     <div id="content">
-      <div id="header">
-        <div class="header-title" id="active-view-name">Página Inicial</div>
-        <div class="header-actions">
-          <button class="notification-bell" id="notification-bell">
-            <img width="24" height="24" src="https://img.icons8.com/emoji/48/bell-emoji.png" alt="bell-emoji" />
-            <span class="notification-badge">3</span>
-          </button>
-          <!-- Menu de Notificações -->
-          <div class="notification-container">
-            <div class="notification-menu" id="notification-menu">
-              <div class="notification-header">
-                <div class="notification-title">Notificações</div>
-                <button class="notification-clear" id="clear-notifications">Limpar tudo</button>
-              </div>
-              <div class="notification-list" id="notification-list">
-                <div class="notification-item" data-service="whatsapp">
-                  <div class="notification-icon">
-                    <img width="24" height="24" src="https://img.icons8.com/fluency/24/whatsapp.png" alt="WhatsApp" />
-                  </div>
-                  <div class="notification-content">
-                    <div class="notification-message">Nova mensagem de João no WhatsApp</div>
-                    <div class="notification-time">5 minutos atrás</div>
-                  </div>
-                </div>
-
-                <div class="notification-item" data-service="instagram">
-                  <div class="notification-icon">
-                    <img width="24" height="24" src="https://img.icons8.com/fluency/24/instagram-new.png" />
-                  </div>
-                  <div class="notification-content">
-                    <div class="notification-message">Maria comentou em sua foto no Instagram</div>
-                    <div class="notification-time">20 minutos atrás</div>
-                  </div>
-                </div>
-
-                <div class="notification-item" data-service="slack">
-                  <div class="notification-icon">
-                    <img width="24" height="24" src="https://img.icons8.com/color/24/slack.png" />
-                  </div>
-                  <div class="notification-content">
-                    <div class="notification-message">Reunião em 15 minutos no canal #geral</div>
-                    <div class="notification-time">30 minutos atrás</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="menu-container">
-            <button class="menu-button" id="menu-button">
-              <img width="24" height="24" src="https://img.icons8.com/fluency/48/menu--v1.png" alt="Menu" />
-            </button>
-            <div class="dropdown-menu" id="dropdown-menu">
-              <button id="todoist-button" class="dropdown-item" type="button">
-                <img width="24" height="24" src="https://img.icons8.com/color/48/todoist.png" alt="Todoist" />
-                <span>Todoist</span>
-              </button>
-
-              <button id="configuration-button" class="dropdown-item" type="button">
-                <img width="24" height="24" src="https://img.icons8.com/color/48/settings--v1.png"
-                  alt="Configuração" /><span>Configuração</span>
-              </button>
-              <button id="logout-button" class="dropdown-item" type="button">
-                <img width="24" height="24" src="https://img.icons8.com/color/24/exit.png"
-                  alt="Sair" /><span>Logout</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="webview-container">
         <div class="webview-wrapper"></div>
       </div>
     </div>
   </div>
+  <footer class="footer-tabs">
+    <button class="footer-tab active" data-tab="chats">💬 Chats</button>
+    <button class="footer-tab" data-tab="emails">📧 E-mails</button>
+    <button class="footer-tab" data-tab="news">📰 News</button>
+    <button class="footer-tab" data-tab="finance">💰 Finanças</button>
+  </footer>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       let currentZoom = 1.0;
       let currentWebview = null;
-  
+
       const services = {
-        'home-button': 'webview-home',
+        // Chats
         'whatsapp-button': 'webview-whatsapp',
         'telegram-button': 'webview-telegram',
         'messenger-button': 'webview-messenger',
@@ -170,11 +226,27 @@
         'threads-button': 'webview-threads',
         'instagram-button': 'webview-instagram',
         'linkedin-button': 'webview-linkedin',
-        'configuration-button': 'webview-configuration',
-        'todoist-button': 'webview-todoist',
-        'zoom-button': 'webview-zoom'
+        'zoom-button': 'webview-zoom',
+        // Emails
+        'gmail-button': 'webview-gmail',
+        'outlook-button': 'webview-outlook',
+        // News
+        'uol-button': 'webview-uol',
+        'g1-button': 'webview-g1',
+        'bandnews-button': 'webview-bandnews',
+        'cnnbrasil-button': 'webview-cnnbrasil',
+        'bbcbrasil-button': 'webview-bbcbrasil',
+        // Finances
+        'infomoney-button': 'webview-infomoney',
+        'valor-button': 'webview-valor',
+        'exame-button': 'webview-exame',
+        'moneytimes-button': 'webview-moneytimes',
+        'bloomberg-button': 'webview-bloomberg',
+        'investing-button': 'webview-investing',
+        'c6bank-button': 'webview-c6bank',
+        'btgpactual-button': 'webview-btgpactual'
       };
-  
+
       const serviceMap = {
         'webview-home': '../../pages/home/home.html',
         'webview-configuration': '../../pages/configuration/configuration.html',
@@ -192,10 +264,25 @@
         'webview-threads': 'https://threads.net',
         'webview-instagram': 'https://www.instagram.com',
         'webview-linkedin': 'https://www.linkedin.com',
-        'webview-todoist': 'https://app.todoist.com/auth/login',
-        'webview-zoom': 'https://zoom.us/pt/signin#/login'
+        'webview-zoom': 'https://zoom.us/pt/signin#/login',
+        'webview-gmail': 'https://mail.google.com', // Gmail
+        'webview-outlook': 'https://outlook.live.com', // Outlook
+        'webview-uol': 'https://www.uol.com.br', // UOL
+        'webview-g1': 'https://g1.globo.com', // G1
+        'webview-bandnews': 'https://band.uol.com.br/noticias', // BandNews
+        'webview-cnnbrasil': 'https://cnnbrasil.com.br', // CNN Brasil
+        'webview-bbcbrasil': 'https://www.bbc.com/portuguese', // BBC Brasil
+        // Finances
+        'webview-infomoney': 'https://www.infomoney.com.br', // Infomoney
+        'webview-valor': 'https://valor.globo.com', // Valor Econômico
+        'webview-exame': 'https://exame.com', // Exame
+        'webview-moneytimes': 'https://www.moneytimes.com.br', // Money Times
+        'webview-bloomberg': 'https://www.bloomberg.com/br', // Bloomberg Brasil
+        'webview-investing': 'https://br.investing.com', // Investing.com Brasil
+        'webview-c6bank': 'https://blog.c6bank.com.br', // C6 Bank
+        'webview-btgpactual': 'https://www.btgpactualdigital.com.br' // BTG Pactual Digital
       };
-  
+
       const webviewTitleMap = {
         'webview-home': 'Página Inicial',
         'webview-configuration': 'Configurações',
@@ -214,10 +301,26 @@
         'webview-instagram': 'Instagram',
         'webview-linkedin': 'LinkedIn',
         'webview-todoist': 'Todoist',
-        'webview-zoom': 'Zoom'
+        'webview-zoom': 'Zoom',
+        'webview-gmail': 'Gmail',
+        'webview-outlook': 'Outlook',
+        'webview-uol': 'UOL',
+        'webview-g1': 'G1',
+        'webview-bandnews': 'Band News',
+        'webview-cnnbrasil': 'CNN Brasil',
+        'webview-bbcbrasil': 'BBC Brasil',
+        'webview-infomoney': 'Infomoney',
+        'webview-valor': 'Valor Econômico',
+        'webview-exame': 'Exame',
+        'webview-moneytimes': 'Money Times',
+        'webview-bloomberg': 'Bloomberg Brasil',
+        'webview-investing': 'Investing.com Brasil',
+        'webview-c6bank': 'C6 Bank',
+        'webview-btgpactual': 'BTG Pactual Digital'
       };
+
       const webviewContainer = document.querySelector('.webview-wrapper');
-  
+
       const createWebview = (webviewId) => {
         const webview = document.createElement('webview');
         webview.id = webviewId;
@@ -227,67 +330,67 @@
         webview.setAttribute('allowpopups', '');
         webview.setAttribute('useragent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36');
         webview.setAttribute('alt', webviewTitleMap[webviewId] || 'Sem título');
-  
+
         webview.addEventListener('dom-ready', () => {
           webview.setZoomFactor(currentZoom);
         });
-  
+
         webview.addEventListener('new-window', e => {
           e.preventDefault();
           webview.loadURL(e.url);
         });
-  
+
         webview.addEventListener('will-navigate', e => {
           if (e.url !== webview.src) {
             e.preventDefault();
             webview.loadURL(e.url);
           }
         });
-  
+
         webviewContainer.appendChild(webview);
         return webview;
       };
-  
+
       const showWebview = (webviewId, buttonId) => {
         document.querySelectorAll('webview').forEach(w => w.classList.remove('active'));
         document.querySelectorAll('.nav-button').forEach(b => b.classList.remove('active'));
-  
+
         let webview = document.getElementById(webviewId);
         if (!webview) webview = createWebview(webviewId);
         else webview.classList.add('active');
-  
+
         document.getElementById(buttonId)?.classList.add('active');
-  
+
         updateActiveViewTitle(webview);
       };
-  
+
       const updateActiveViewTitle = (webview) => {
         if (!webview) return;
         const title = webview.getAttribute('alt');
         document.getElementById('active-view-name').textContent = title || '';
       };
-  
+
       const setupButtonEvents = () => {
         Object.entries(services).forEach(([btnId, webviewId]) => {
           document.getElementById(btnId)?.addEventListener('click', () => showWebview(webviewId, btnId));
         });
       };
-  
+
       const setupNotificationActions = () => {
         const badge = document.querySelector(".notification-badge");
         const list = document.getElementById("notification-list");
-  
+
         const updateBadge = () => {
           const count = list.querySelectorAll('.notification-item').length;
           badge.textContent = count || '';
           badge.style.display = count ? 'flex' : 'none';
         };
-  
+
         document.getElementById("clear-notifications")?.addEventListener("click", () => {
           list.innerHTML = '<div class="notification-empty">Nenhuma notificação disponível</div>';
           badge.style.display = "none";
         });
-  
+
         list.querySelectorAll('.notification-item').forEach(item => {
           item.addEventListener('click', () => {
             const service = item.getAttribute('data-service');
@@ -301,35 +404,35 @@
             updateBadge();
           });
         });
-  
+
         updateBadge();
       };
-  
+
       const setupMenus = () => {
         const menuBtn = document.getElementById("menu-button");
         const menu = document.getElementById("dropdown-menu");
         const bell = document.getElementById("notification-bell");
         const notifMenu = document.getElementById("notification-menu");
-  
+
         menuBtn?.addEventListener("click", () => menu.classList.toggle("show"));
         bell?.addEventListener("click", () => {
           notifMenu.classList.toggle("show");
           menu.classList.remove("show");
         });
-  
+
         document.querySelectorAll('.dropdown-item').forEach(item => {
           item.addEventListener('click', () => menu.classList.remove("show"));
         });
-  
+
         document.addEventListener("click", (e) => {
           if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove("show");
           if (!notifMenu.contains(e.target) && !bell.contains(e.target)) notifMenu.classList.remove("show");
         });
       };
-  
+
       const setupContextMenu = () => {
         const contextMenu = document.getElementById('context-menu');
-  
+
         document.addEventListener('contextmenu', (e) => {
           const webview = e.target.closest('webview');
           if (webview) {
@@ -340,28 +443,28 @@
             contextMenu.style.display = 'block';
           }
         });
-  
+
         document.getElementById('reload-option')?.addEventListener('click', () => {
           currentWebview?.reload();
           contextMenu.style.display = 'none';
         });
-  
+
         document.addEventListener('click', () => contextMenu.style.display = 'none');
       };
-  
+
       const setupSidebarScroll = () => {
         document.getElementById('sidebar')?.addEventListener('wheel', (e) => {
           e.preventDefault();
           e.currentTarget.scrollTop += e.deltaY;
         });
       };
-  
+
       const setupLogout = () => {
         document.getElementById('logout-button')?.addEventListener('click', () => {
           window.electronAPI.logout();
         });
       };
-  
+
       const showNotification = (title, body) => {
         if (Notification.permission === "granted") {
           new Notification(title, { body });
@@ -371,7 +474,27 @@
           });
         }
       };
-  
+
+      const setupFooterTabs = () => {
+        const footerTabs = document.querySelectorAll(".footer-tab");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        footerTabs.forEach(tab => {
+          tab.addEventListener("click", () => {
+            const selected = tab.dataset.tab;
+
+            // Ativar aba
+            footerTabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            // Trocar conteúdo do sidebar
+            tabContents.forEach(c => c.classList.add("d-none"));
+            document.getElementById(`tab-${selected}`)?.classList.remove("d-none");
+          });
+        });
+      };
+
+
       // Inicializações
       setupButtonEvents();
       setupNotificationActions();
@@ -379,10 +502,11 @@
       setupContextMenu();
       setupSidebarScroll();
       setupLogout();
+      setupFooterTabs();
       showWebview('webview-home', 'home-button');
     });
   </script>
-  
+
 
 </body>
 
