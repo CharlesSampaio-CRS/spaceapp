@@ -157,7 +157,7 @@
           <img width="48" height="48" src="https://img.icons8.com/color/48/google-news.png" alt="Google News" />
         </button>
         <button id="uol-button" class="nav-button" title="UOL">
-          <img width="48" height="48" src="https://img.icons8.com/color/48/uol.png" alt="UOL" />
+          <img width="48" height="48" src="../../assets/uol.png" alt="UOL" />
         </button>
         <button id="g1-button" class="nav-button" title="G1">
           <img width="48" height="48" src="https://img.icons8.com/color/48/g1.png" alt="G1" />
@@ -176,21 +176,40 @@
       <div class="nav-section tab-content d-none" id="tab-finance">
 
         <button id="infomoney-button" class="nav-button" title="Infomoney">
-          <img width="48" height="48" src="https://img.icons8.com/color/48/infomoney.png" alt="Infomoney" />
+          <img width="48" height="48" src="../../assets/infomoney.png" alt="Infomoney" />
         </button>
         <button id="exame-button" class="nav-button" title="Exame">
-          <img width="48" height="48" src="https://img.icons8.com/color/48/exame.png" alt="Exame" />
+          <img width="48" height="48" src="../../assets/exame.png" alt="Exame" />
         </button>
         <button id="moneytimes-button" class="nav-button" title="Money Times">
-          <img width="48" height="48" src="https://img.icons8.com/color/48/money-times.png" alt="Money Times" />
+          <img width="48" height="48" src="../../assets/gmail.png" alt="Money Times" />
         </button>
         <button id="bloomberg-button" class="nav-button" title="Bloomberg Brasil">
-          <img width="48" height="48" src="https://img.icons8.com/color/48/bloomberg.png" alt="Bloomberg Brasil" />
+          <img width="48" height="48" src="../../assets/bloomberg.png" alt="Bloomberg Brasil" />
         </button>
         <button id="investing-button" class="nav-button" title="Investing.com Brasil">
-          <img width="48" height="48" src="https://img.icons8.com/color/48/investing.png" alt="Investing.com Brasil" />
+          <img width="48" height="48" src="../../assets/investing.png" alt="Investing.com Brasil" />
         </button>
       </div>
+
+      <div class="nav-section tab-content d-none" id="tab-music">
+        <button id="youtube-music-button" class="nav-button" title="YouTube Music">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/youtube-music.png" alt="YouTube Music" />
+        </button>
+        <button id="spotify-button" class="nav-button" title="Spotify">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/spotify--v1.png" alt="Spotify" />
+        </button>
+        <button id="deezer-button" class="nav-button" title="Deezer">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/deezer.png" alt="Deezer" />
+        </button>
+        <button id="soundcloud-button" class="nav-button" title="SoundCloud">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/soundcloud.png" alt="SoundCloud" />
+        </button>
+        <button id="apple-music-button" class="nav-button" title="Apple Music">
+          <img width="48" height="48" src="https://img.icons8.com/color/48/apple-music.png" alt="Apple Music" />
+        </button>
+      </div>
+      
 
     </div>
     <div id="content">
@@ -200,12 +219,29 @@
     </div>
   </div>
   <footer class="footer-tabs">
-    <button class="footer-tab active" data-tab="chats">💬 Chats</button>
-    <button class="footer-tab" data-tab="emails">📧 E-mails</button>
-    <button class="footer-tab" data-tab="news">📰 News</button>
-    <button class="footer-tab" data-tab="finance">💰 Finanças</button>
+    <button class="footer-tab active" data-tab="chats">
+      <img src="https://img.icons8.com/color/20/000000/chat--v1.png" alt="Chats" />
+      <span>Chats</span>
+    </button>
+    <button class="footer-tab" data-tab="emails">
+      <img src="https://img.icons8.com/fluency/20/new-post.png" alt="Emails"/>
+      <span>E-mails</span>
+    </button>
+    <button class="footer-tab" data-tab="news">
+      <img src="https://img.icons8.com/color/20/000000/news.png" alt="Notícias" />
+      <span>Notícias</span>
+    </button>
+    <button class="footer-tab" data-tab="finance">
+      <img src="https://img.icons8.com/fluency/20/stocks-growth--v1.png" alt="Finanças"/>
+      <span>Finanças</span>
+    </button>
+    <button class="footer-tab" data-tab="music">
+      <img src="https://img.icons8.com/color/20/000000/musical-notes.png" alt="Músicas" />
+      <span>Músicas</span>
+    </button>
   </footer>
-  <script>
+  
+   <script>
     document.addEventListener('DOMContentLoaded', () => {
       let currentZoom = 1.0;
       let currentWebview = null;
@@ -244,7 +280,13 @@
         'bloomberg-button': 'webview-bloomberg',
         'investing-button': 'webview-investing',
         'c6bank-button': 'webview-c6bank',
-        'btgpactual-button': 'webview-btgpactual'
+        'btgpactual-button': 'webview-btgpactual',
+        // Music
+        'youtube-music-button': 'webview-youtube-music',
+        'spotify-button': 'webview-spotify',
+        'deezer-button': 'webview-deezer',
+        'soundcloud-button': 'webview-soundcloud',
+        'apple-music-button': 'webview-apple-music'
       };
 
       const serviceMap = {
@@ -280,7 +322,12 @@
         'webview-bloomberg': 'https://www.bloomberg.com/br', // Bloomberg Brasil
         'webview-investing': 'https://br.investing.com', // Investing.com Brasil
         'webview-c6bank': 'https://blog.c6bank.com.br', // C6 Bank
-        'webview-btgpactual': 'https://www.btgpactualdigital.com.br' // BTG Pactual Digital
+        'webview-btgpactual': 'https://www.btgpactualdigital.com.br',
+        'webview-youtube-music': 'https://music.youtube.com',
+        'webview-spotify': 'https://open.spotify.com',
+        'webview-deezer': 'https://www.deezer.com',
+        'webview-soundcloud': 'https://soundcloud.com',
+        'webview-apple-music': 'https://music.apple.com' // BTG Pactual Digital
       };
 
       const webviewTitleMap = {
@@ -316,7 +363,13 @@
         'webview-bloomberg': 'Bloomberg Brasil',
         'webview-investing': 'Investing.com Brasil',
         'webview-c6bank': 'C6 Bank',
-        'webview-btgpactual': 'BTG Pactual Digital'
+        'webview-btgpactual': 'BTG Pactual Digital',
+        // Music
+        'webview-youtube-music': 'YouTube Music',
+        'webview-spotify': 'Spotify',
+        'webview-deezer': 'Deezer',
+        'webview-soundcloud': 'SoundCloud',
+        'webview-apple-music': 'Apple Music'
       };
 
       const webviewContainer = document.querySelector('.webview-wrapper');
@@ -330,7 +383,7 @@
         webview.setAttribute('allowpopups', '');
         webview.setAttribute('useragent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36');
         webview.setAttribute('alt', webviewTitleMap[webviewId] || 'Sem título');
-
+        webview.setAttribute('webpreferences', 'contextIsolation=no, nativeWindowOpen=yes');
         webview.addEventListener('dom-ready', () => {
           webview.setZoomFactor(currentZoom);
         });

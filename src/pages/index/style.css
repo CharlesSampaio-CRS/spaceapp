@@ -9,7 +9,7 @@
     --hover-color: rgba(99, 102, 241, 0.1);
     --active-color: rgba(99, 102, 241, 0.2);
     --border-radius: 16px;
-    --sidebar-width: 80px;
+    --sidebar-width: 64px;
     --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
@@ -46,11 +46,7 @@
     border-right: 1px solid rgba(0, 0, 0, 0.05);
     z-index: 10;
     flex-shrink: 0;
-    overflow-y: auto;
-    max-height: 100vh; /* Garante que o sidebar não ultrapasse a altura da tela */
     transition: var(--transition);
-    scrollbar-width: thin; /* Para Firefox */
-    scrollbar-color: #4a90e2 #f0f0f0; /* Cor do thumb e track */
   }
   
   /* Para WebKit (Chrome, Safari, Edge) */
@@ -169,6 +165,20 @@
     align-items: center;
     gap: 8px;
   }
+
+    .header-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    flex: 1;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
   
   .home-button {
     background: none;
@@ -182,19 +192,7 @@
     height: 32px;
   }
   
-  .header-title {
-    font-weight: 600;
-    color: var(--text-primary);
-    text-align: center;
-    flex: 1;
-  }
-  
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
+
   .notification-container {
     position: relative;
   }
@@ -384,15 +382,21 @@
     text-align: center;
   }
   
+
   .webview-container {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 0;
-    margin: 0;
     overflow: hidden;
+    height: calc(100vh - 50px - 44px); /* header + footer */
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    bottom: 44px;
+    left: 0;
+    right: 0;
   }
-  
+
   .webview-wrapper {
     flex: 1;
     display: flex;
@@ -413,21 +417,33 @@
     justify-content: space-around;
     border-top: 1px solid #ddd;
     z-index: 999;
+    height: 44px; /* ainda menor */
   }
   
   .footer-tab {
     flex: 1;
-    padding: 10px;
+    padding: 4px 0;
     text-align: center;
     background: transparent;
     border: none;
-    font-size: 14px;
+    font-size: 11px; /* texto menor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+  }
+  
+  .footer-tab img {
+    width: 20px;
+    height: 20px; /* ícones ainda menores */
   }
   
   .footer-tab.active {
     background: #e2e6ea;
     font-weight: bold;
-  } 
+    border-radius: 6px 6px 0 0;
+  }
+
   
   webview {
     flex: 1;
