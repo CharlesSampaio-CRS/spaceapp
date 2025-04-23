@@ -9,7 +9,7 @@
     --hover-color: rgba(99, 102, 241, 0.1);
     --active-color: rgba(99, 102, 241, 0.2);
     --border-radius: 16px;
-    --sidebar-width: 64px;
+    --sidebar-width: 80px;
     --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
@@ -46,7 +46,11 @@
     border-right: 1px solid rgba(0, 0, 0, 0.05);
     z-index: 10;
     flex-shrink: 0;
+    overflow-y: auto;
+    max-height: 100vh; /* Garante que o sidebar não ultrapasse a altura da tela */
     transition: var(--transition);
+    scrollbar-width: thin; /* Para Firefox */
+    scrollbar-color: #4a90e2 #f0f0f0; /* Cor do thumb e track */
   }
   
   /* Para WebKit (Chrome, Safari, Edge) */
@@ -382,7 +386,6 @@
     text-align: center;
   }
   
-
   .webview-container {
     flex: 1;
     display: flex;
@@ -396,7 +399,7 @@
     left: 0;
     right: 0;
   }
-
+  
   .webview-wrapper {
     flex: 1;
     display: flex;
